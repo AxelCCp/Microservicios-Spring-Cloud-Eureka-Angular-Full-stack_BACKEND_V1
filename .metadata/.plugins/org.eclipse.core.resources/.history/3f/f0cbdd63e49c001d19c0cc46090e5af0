@@ -1,0 +1,11 @@
+package microservice.examenes.models.service;
+
+import java.util.Optional;
+
+import microservice.examenes.models.entity.Examen;
+
+public class ExamenServiceImpl implements IExamenService {
+
+	
+
+}

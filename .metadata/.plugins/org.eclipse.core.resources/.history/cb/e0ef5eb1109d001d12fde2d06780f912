@@ -1,0 +1,14 @@
+package microservice.examenes.models.service;
+
+import org.springframework.stereotype.Service;
+
+import microservice.commons.examenes.model.entity.Examen;
+import microservice.commons.services.CommonService;
+import microservice.examenes.models.repository.IExamenRepository;
+
+@Service
+public class ExamenServiceImpl extends CommonService<Examen,IExamenRepository> implements IExamenService {
+
+	
+
+}

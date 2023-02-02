@@ -1,0 +1,13 @@
+package microservice.examenes.models.service;
+
+import java.util.Optional;
+
+import microservice.commons.services.CommonService;
+import microservice.examenes.models.entity.Examen;
+import microservice.examenes.models.repository.IExamenRepository;
+
+public class ExamenServiceImpl extends CommonService<Examen,IExamenRepository> implements IExamenService {
+
+	
+
+}

@@ -1,0 +1,5 @@
+package microservice.cursos.controllers;
+
+public class CursoController {
+
+}

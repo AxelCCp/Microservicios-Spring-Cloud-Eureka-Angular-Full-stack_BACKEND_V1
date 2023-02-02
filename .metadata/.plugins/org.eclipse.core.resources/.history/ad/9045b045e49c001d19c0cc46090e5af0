@@ -1,0 +1,5 @@
+package microservice.examenes.models.service;
+
+public class ExamenServiceImpl {
+
+}

@@ -1,0 +1,15 @@
+package microservice.usuarios.models.service;
+
+
+import org.springframework.stereotype.Service;
+
+import microservice.alumnos.commons.models.entity.Alumno;
+import microservice.commons.services.CommonService;
+import microservice.usuarios.models.repository.IAlumnoRepository;
+
+@Service
+public class AlumnoService extends CommonService<Alumno, IAlumnoRepository> implements IAlumnoService{
+
+	
+	
+}

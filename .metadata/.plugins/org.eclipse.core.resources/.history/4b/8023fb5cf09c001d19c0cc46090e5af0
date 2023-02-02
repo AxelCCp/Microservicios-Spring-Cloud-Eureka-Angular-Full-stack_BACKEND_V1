@@ -1,0 +1,11 @@
+package microservice.examenes.models.service;
+
+import microservice.commons.services.ICommonService;
+import microservice.examenes.models.entity.Examen;
+
+public interface IExamenService extends ICommonService<Examen>{
+
+	
+	
+	
+}

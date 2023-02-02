@@ -1,0 +1,5 @@
+package microservice.cursos.models.repository;
+
+public interface ICursoRepository {
+
+}

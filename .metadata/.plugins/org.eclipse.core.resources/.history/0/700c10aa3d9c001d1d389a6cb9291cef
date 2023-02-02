@@ -1,0 +1,16 @@
+package microservice.usuarios.models.service;
+
+
+import microservice.commons.services.ICommonService;
+import microservice.usuarios.models.entity.Alumno;
+
+public interface IAlumnoService extends ICommonService<Alumno>{
+
+	/*
+	public Iterable<Alumno>findAll();
+	public Optional<Alumno>porId(Long Id);
+	public Alumno save(Alumno alumno);
+	public void deleteById(Long id);
+	*/
+	
+}

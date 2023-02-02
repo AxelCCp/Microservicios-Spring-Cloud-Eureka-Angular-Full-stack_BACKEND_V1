@@ -1,0 +1,12 @@
+package microservice.cursos.models.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="cursos")
+public class Curso {
+
+	
+	
+}

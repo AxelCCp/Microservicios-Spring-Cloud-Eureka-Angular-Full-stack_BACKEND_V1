@@ -1,0 +1,9 @@
+package microservice.cursos.models.service;
+
+import microservice.commons.services.CommonService;
+import microservice.cursos.models.entity.Curso;
+import microservice.cursos.models.repository.ICursoRepository;
+
+public class CursoServiceImpl extends CommonService<Curso,ICursoRepository> implements ICursoService {
+
+}
