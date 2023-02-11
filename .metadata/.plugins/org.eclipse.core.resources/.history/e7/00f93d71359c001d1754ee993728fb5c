@@ -1,5 +1,0 @@
-package microservice.cursos.models.entity;
-
-public class Curso {
-
-}

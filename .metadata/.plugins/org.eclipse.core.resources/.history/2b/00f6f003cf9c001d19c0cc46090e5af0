@@ -1,5 +1,0 @@
-package microservice.examenes.models.repository;
-
-public interface IExamenRepository {
-
-}

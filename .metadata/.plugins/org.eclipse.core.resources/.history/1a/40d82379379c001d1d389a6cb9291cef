@@ -1,5 +1,0 @@
-package microservice.cursos.models.service;
-
-public interface ICursoService extends {
-
-}

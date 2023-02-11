@@ -1,9 +1,0 @@
-package microservice.cursos.models.repository;
-
-import org.springframework.data.repository.CrudRepository;
-
-import microservice.cursos.models.entity.Curso;
-
-public interface ICursoRepository extends CrudRepository<Curso,Long>{
-
-}

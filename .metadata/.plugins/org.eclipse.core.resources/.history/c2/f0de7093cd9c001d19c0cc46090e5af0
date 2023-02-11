@@ -1,5 +1,0 @@
-package microservice.examenes.models.entity;
-
-public class Pregunta {
-
-}

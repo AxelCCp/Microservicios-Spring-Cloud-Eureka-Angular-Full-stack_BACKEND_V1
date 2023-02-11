@@ -1,9 +1,0 @@
-package microservice.examenes.models.repository;
-
-import org.springframework.data.repository.CrudRepository;
-
-import microservice.commons.examenes.model.entity.Examen;
-
-public interface IExamenRepository extends CrudRepository<Examen,Long>{
-
-}
