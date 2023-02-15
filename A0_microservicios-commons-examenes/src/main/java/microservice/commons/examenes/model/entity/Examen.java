@@ -18,6 +18,7 @@ import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -74,6 +75,14 @@ public class Examen implements Serializable {
 
 	public void setAsignatura(Asignatura asignatura) {
 		this.asignatura = asignatura;
+	}
+	
+	public Boolean getRespondido() {
+		return Respondido;
+	}
+
+	public void setRespondido(Boolean respondido) {
+		Respondido = respondido;
 	}
 
 	//MODIFICACIÓN SETTER:
@@ -138,7 +147,10 @@ public class Examen implements Serializable {
 	@OneToMany(mappedBy="examen", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)	//33 : CUANDO SE ELIMINA UN EXAMEN SE TIENEN Q ELIMINAR SUS PREGUNTAS. CUANDO SE CREA UN EXAMEN TAMBN SE CREAN SUS PREGUNTAS. LA IDEA ES Q SE CREE TODO JUNTO, EL EXAMEN Y LAS PREGUNTAS, POR ESO "ALL".   	 // orphanRemoval = true) : CADA VEZ Q SE ELIMINA UNA PREGUNTA DE LA LISTA, LA PREGUNTA ELIMINADA TIENE Q ASIGNAR LA REFERENCIA DEL EXAMEN EN NULL.   //TAMBN, CUALQUIER PREGUNTA QUE NO ESTÉ ASIGNADA A UN EXAMEN, LA VA A ELIMINAR.  //mappedBy="examen" : PARA ESTABLECER LA RELACIÓN BI DIRECCIONAL.
 	private List<Pregunta>preguntas;
 	
-	@NotNull
+	//@NotNull
 	@ManyToOne(fetch = FetchType.LAZY)//MUCHOS EXÁMENES PUEDEN ESTAR ASOCIADOS A UNA SOLA ASIGNATURA.			//LA RELACIÓN ES UNIDIRECCIONAL, SE QUIERE SABER DE QUÉ ASIGNATURA ES UN EXAMEN, PERO NO INTERESA SABER LOS EXAMENES DE UNA ASIGNATURA.
 	private Asignatura asignatura;
+	
+	@Transient//ATRIBUTO Q NO SE MAPEA A LA TABLA.
+	private Boolean Respondido;
 }

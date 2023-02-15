@@ -28,6 +28,15 @@ public class RespuestaController {
 		return ResponseEntity.ok(respuestas);
 	}
 	
+	
+	//OBTIENE EL ID DE LOS EXAMENES QUE FUERON RESPONDIDOS POR EL ALUMNO
+	@GetMapping("/alumno/{alumnoId}/examenes-respondidos")
+	public ResponseEntity<?>obtenerExamenesConRespuestasPorAlumno(@PathVariable Long alumnoId){
+		Iterable<Long>examenesIds = respuestaService.findExamenesIdsConRespuestasByAlumno(alumnoId);
+		return ResponseEntity.ok(examenesIds);
+		
+	}
+	
 	@Autowired
 	private IRespuestaService respuestaService;
 }

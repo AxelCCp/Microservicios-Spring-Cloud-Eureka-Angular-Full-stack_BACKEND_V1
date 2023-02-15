@@ -21,4 +21,11 @@ public interface RespuestaRepository extends CrudRepository<Respuesta,Long>{
 	public Iterable<Respuesta>findRespuestaByAlumnoByExamen(Long alumnoId, Long examenId);
 	
 	
+	//58 : BUSCA LOS EXAMENES ID CON RESPUESTAS POR UN ALUMNO. ESTE MÉTODO VA A BUSCAR LOS ID DE LOS EXÁMENES QUE FUERON RESPONDIDOS POR UN ALUMNO.
+	//AQU NO SE USA FETCH YA QUE LA CONSULTA DEVUELVE SOLO EL ID DE LOS EXAMENES Y NO UN OBJETO CON LOS OBJETOS RELACIONADOS.
+	//group by : CON ESTO SE AGRUPAN LOS DATOS. Y EN ESTE CASO POR EL EXAMEN ID. YA SI SI NO SE PONE ESTO, EL ID DEL EXAMEN VA A APARECER EN EL JSON,  POR CADA PREGUNTA RESPONDIDA.
+	@Query("select e.id from Respuesta r join r.alumno a join r.pregunta p join p.examen e where a.id=?1 group by e.id")
+	public Iterable<Long>findExamenesIdsConRespuestasByAlumno(Long alumnoId);
+	
+	
 }

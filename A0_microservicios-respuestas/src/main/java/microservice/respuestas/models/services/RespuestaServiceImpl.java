@@ -19,12 +19,20 @@ public class RespuestaServiceImpl implements IRespuestaService{
 	@Override
 	@Transactional(readOnly = true)
 	public Iterable<Respuesta> findRespuestaByAlumnoByExamen(Long alumnoId, Long examenId) {
-		// TODO Auto-generated method stub
+	
 		return respuestaRepository.findRespuestaByAlumnoByExamen(alumnoId, examenId);
+	}
+	
+	@Override
+	public Iterable<Long> findExamenesIdsConRespuestasByAlumno(Long alumnoId) {
+	
+		return respuestaRepository.findExamenesIdsConRespuestasByAlumno(alumnoId);
 	}
 
 	@Autowired
 	private RespuestaRepository respuestaRepository;
+
+	
 
 	
 }
