@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 // R extends CrudRepository<E,Long> : SE ESTÁ DICIENDO QUE EL SEGUNDO GENERICO ES DE CUALQUIER TIPO QUE EXTIENDA DE CrudRepository.
 //SE QUITA EL @SERVICE, YA Q NO SE VA A INYECTAR, SINO HEREDAR.
 
-//46 : SE CAMBIA CrudRepository POR CrudRepository PARA USAR PAGINACIÓN.
+//46 : SE CAMBIA CrudRepository POR PagingAndSortingRepository PARA USAR PAGINACIÓN.
 public class CommonService<E, R extends PagingAndSortingRepository<E,Long>>  implements ICommonService<E>{
 
 	@Override

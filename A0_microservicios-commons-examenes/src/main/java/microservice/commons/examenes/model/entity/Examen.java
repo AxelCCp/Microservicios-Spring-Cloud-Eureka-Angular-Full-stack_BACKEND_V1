@@ -20,7 +20,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -110,7 +109,7 @@ public class Examen implements Serializable {
 		pregunta.setExamen(null);	
 	}
 
-	
+	//38
 	@Override
 	public boolean equals(Object obj) {
 		//SE COMPARA ESTA INSTANCIA CON EL OBJ Q LLEGA POR PARÁMETRO. CON LA CLASE HACE EL MAPEO EN LA BBDD Y SI LO ENCUENTRA, LO ELIMINA.

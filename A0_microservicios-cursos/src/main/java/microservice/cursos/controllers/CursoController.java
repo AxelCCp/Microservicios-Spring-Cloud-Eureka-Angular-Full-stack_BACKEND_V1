@@ -2,6 +2,7 @@ package microservice.cursos.controllers;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
@@ -101,6 +102,23 @@ public class CursoController extends CommonController<Curso,ICursoService>{
 	@GetMapping("/alumno/{id}")
 	public ResponseEntity<?>buscarAlumnoporId(@PathVariable long id){
 		Curso curso = service.findCursoByAlumnoId(id);
+		
+		
+		if(curso != null) {
+			//OBTIENE LOS EXAMENES RESPONDIDOS POR EL ALUMNO
+			List<Long>examenesIds = (List<Long>)service.obtenerExamenesConRespuestasPorAlumno(id);
+			//SE OBTIENEN TODOS LOS EXAMENES Y SE SETTEAN EN TRUE LOS EXAMENES RESPONDIDOS
+			List<Examen>examenes = curso.getExamenes().stream().map(examen -> {
+				if(examenesIds.contains(examen.getId())) {
+					examen.setRespondido(true);
+				}
+				return examen;
+			}).collect(Collectors.toList());
+			//ACTUALIZA LA LISTA
+			curso.setExamenes(examenes);
+		}
+		
+		
 		return ResponseEntity.ok(curso);
 	}
 	

@@ -8,4 +8,6 @@ public interface ICursoService extends ICommonService<Curso>{
 	//METODO PERSONALIZADO
 	public Curso findCursoByAlumnoId(Long id);
 	
+	public Iterable<Long>obtenerExamenesConRespuestasPorAlumno(Long alumnoId);
+	
 }
